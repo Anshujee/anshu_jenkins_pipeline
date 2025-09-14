@@ -63,4 +63,3 @@ This end-to-end Jenkins pipeline will automate the entire CI/CD process for a Ja
 
 This is my firdt pipeline and is very important to learn basics concept of Jenkins.
 
-This is to check Pull request is working fine or not.
