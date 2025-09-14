@@ -65,4 +65,7 @@ This is my firdt pipeline and is very important to learn basics concept of Jenki
 
 Steps Follows to perform this Jenkins demo - 
 Step 1 : - Launch an EC2 Instacnce on AWS with t2.large configure.
+Step 2 : - Install Jenkins on EC2 Imstance on AWS. 
+Step 3 : - Configure Jenkins over the EC2 Instance. 
+Step 4 : - Install plugins for Docker and Sonarqube. 
 
