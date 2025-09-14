@@ -9,7 +9,7 @@ pipeline {
     stage('Checkout') {
       steps {
         sh 'echo passed'
-        //git branch: 'main', url: 'https://github.com/Osomudeya/CICD_project'
+        //git branch: 'main', url: 'https://github.com/https://github.com/Anshujee/anshu_jenkins_pipeline.git'
       }
     }
     stage('Build and Test') {
@@ -31,7 +31,7 @@ pipeline {
     }
     stage('Build and Push Docker Image') {
       environment {
-        DOCKER_IMAGE = "osomudeya/ultimate-cicd:${BUILD_NUMBER}"
+        DOCKER_IMAGE = "anshujee/ultimate-cicd:${BUILD_NUMBER}"
         // DOCKERFILE_LOCATION = "spring-boot-app/Dockerfile"
         REGISTRY_CREDENTIALS = credentials('docker-cred')
       }
@@ -47,14 +47,14 @@ pipeline {
     }
     stage('Update Deployment File') {
         environment {
-            GIT_REPO_NAME = "CICD_project"
-            GIT_USER_NAME = "Osomudeya"
+            GIT_REPO_NAME = "anshu_jenkins_pipeline"
+            GIT_USER_NAME = "Anshujee"
         }
         steps {
             withCredentials([string(credentialsId: 'github', variable: 'GITHUB_TOKEN')]) {
                 sh '''
-                    git config user.email "talk2osomudeya@gmail.com"
-                    git config user.name "Osomudeya"
+                    git config user.email "jeeanshu24@gmail.com"
+                    git config user.name "Anshujee"
                     BUILD_NUMBER=${BUILD_NUMBER}
                     sed -i "s/replaceImageTag/${BUILD_NUMBER}/g" spring-boot-app-manifests/deployment.yml
                     git add spring-boot-app-manifests/deployment.yml
